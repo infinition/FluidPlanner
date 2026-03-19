@@ -1,0 +1,345 @@
+(lerobot312) C:\DEV\Workspace\active\coding_AI RESEARCH\Fluidplanner>python experiments/train.py --model flat --epochs 100 --grid-size 16
+Device: cuda
+Generating 1000 training mazes (grid=16)...
+Train: 1000 trajectories, 23983 steps
+Val: 100 trajectories, 2353 steps
+Model: flat | Params: 118,724 | d_model: 64
+PDE steps/level: 6
+Mode: NO phase supervision (emergence test)
+Training for 100 epochs, batch_size=128
+Epoch 1/100 loss=1.2012 act_acc=0.445 phase_acc=0.300 solve=0.0% steps=0.0 best=0.0%
+Epoch 2/100 loss=1.1034 act_acc=0.538 phase_acc=0.300
+Epoch 3/100 loss=0.9879 act_acc=0.563 phase_acc=0.300
+Epoch 4/100 loss=0.9495 act_acc=0.578 phase_acc=0.300
+Epoch 5/100 loss=0.9233 act_acc=0.584 phase_acc=0.300 solve=0.0% steps=0.0 best=0.0%
+Epoch 6/100 loss=0.9103 act_acc=0.587 phase_acc=0.300
+Epoch 7/100 loss=0.9024 act_acc=0.591 phase_acc=0.300
+Epoch 8/100 loss=0.8964 act_acc=0.587 phase_acc=0.300
+Epoch 9/100 loss=0.8883 act_acc=0.592 phase_acc=0.300
+Epoch 10/100 loss=0.8722 act_acc=0.595 phase_acc=0.300 solve=0.0% steps=0.0 best=0.0%
+Epoch 11/100 loss=0.8443 act_acc=0.604 phase_acc=0.300
+Epoch 12/100 loss=0.8246 act_acc=0.644 phase_acc=0.300
+Epoch 13/100 loss=0.8042 act_acc=0.656 phase_acc=0.300
+Epoch 14/100 loss=0.7654 act_acc=0.697 phase_acc=0.300
+Epoch 15/100 loss=0.7467 act_acc=0.701 phase_acc=0.300 solve=2.0% steps=19.0 best=2.0%
+Epoch 16/100 loss=0.7032 act_acc=0.731 phase_acc=0.300
+Epoch 17/100 loss=0.6681 act_acc=0.739 phase_acc=0.300
+Epoch 18/100 loss=0.6588 act_acc=0.755 phase_acc=0.300
+Epoch 19/100 loss=0.6087 act_acc=0.776 phase_acc=0.300
+Epoch 20/100 loss=0.5838 act_acc=0.731 phase_acc=0.300 solve=2.0% steps=19.0 best=2.0%
+Epoch 21/100 loss=0.5415 act_acc=0.807 phase_acc=0.300
+Epoch 22/100 loss=0.5255 act_acc=0.732 phase_acc=0.300
+Epoch 23/100 loss=0.5071 act_acc=0.792 phase_acc=0.300
+Epoch 24/100 loss=0.4833 act_acc=0.843 phase_acc=0.300
+Epoch 25/100 loss=0.4561 act_acc=0.847 phase_acc=0.300 solve=18.0% steps=23.2 best=18.0%
+Epoch 26/100 loss=0.4497 act_acc=0.853 phase_acc=0.300
+Epoch 27/100 loss=0.4056 act_acc=0.810 phase_acc=0.300
+Epoch 28/100 loss=0.3894 act_acc=0.850 phase_acc=0.300
+Epoch 29/100 loss=0.3625 act_acc=0.867 phase_acc=0.300
+Epoch 30/100 loss=0.3579 act_acc=0.865 phase_acc=0.300 solve=14.0% steps=22.1 best=18.0%
+Epoch 31/100 loss=0.3459 act_acc=0.846 phase_acc=0.300
+Epoch 32/100 loss=0.3241 act_acc=0.847 phase_acc=0.300
+Epoch 33/100 loss=0.3143 act_acc=0.895 phase_acc=0.300
+Epoch 34/100 loss=0.3039 act_acc=0.890 phase_acc=0.300
+Epoch 35/100 loss=0.2902 act_acc=0.897 phase_acc=0.300 solve=28.0% steps=23.3 best=28.0%
+Epoch 36/100 loss=0.2808 act_acc=0.893 phase_acc=0.300
+Epoch 37/100 loss=0.2729 act_acc=0.906 phase_acc=0.300
+Epoch 38/100 loss=0.2606 act_acc=0.901 phase_acc=0.300
+Epoch 39/100 loss=0.2617 act_acc=0.873 phase_acc=0.300
+Epoch 40/100 loss=0.2543 act_acc=0.909 phase_acc=0.300 solve=28.0% steps=22.7 best=28.0%
+Epoch 41/100 loss=0.2416 act_acc=0.912 phase_acc=0.300
+Epoch 50/100 loss=0.1929 act_acc=0.921 phase_acc=0.300 solve=42.0% steps=23.1 best=42.0%
+Epoch 51/100 loss=0.1864 act_acc=0.921 phase_acc=0.300
+Epoch 52/100 loss=0.1803 act_acc=0.918 phase_acc=0.300
+Epoch 53/100 loss=0.1769 act_acc=0.916 phase_acc=0.300
+Epoch 54/100 loss=0.1770 act_acc=0.914 phase_acc=0.300
+Epoch 55/100 loss=0.1717 act_acc=0.926 phase_acc=0.300 solve=42.0% steps=23.0 best=42.0%
+Epoch 50/100 loss=0.1929 act_acc=0.921 phase_acc=0.300 solve=42.0% steps=23.1 best=42.0%
+Epoch 51/100 loss=0.1864 act_acc=0.921 phase_acc=0.300
+Epoch 52/100 loss=0.1803 act_acc=0.918 phase_acc=0.300
+Epoch 53/100 loss=0.1769 act_acc=0.916 phase_acc=0.300
+Epoch 54/100 loss=0.1770 act_acc=0.914 phase_acc=0.300
+Epoch 55/100 loss=0.1717 act_acc=0.926 phase_acc=0.300 solve=42.0% steps=23.0 best=42.0%
+Epoch 56/100 loss=0.1711 act_acc=0.926 phase_acc=0.300
+Epoch 57/100 loss=0.1659 act_acc=0.922 phase_acc=0.300
+Epoch 58/100 loss=0.1632 act_acc=0.924 phase_acc=0.300
+Epoch 59/100 loss=0.1626 act_acc=0.926 phase_acc=0.300
+Epoch 60/100 loss=0.1578 act_acc=0.921 phase_acc=0.300 solve=36.0% steps=22.1 best=42.0%
+Epoch 61/100 loss=0.1583 act_acc=0.925 phase_acc=0.300
+Epoch 62/100 loss=0.1581 act_acc=0.921 phase_acc=0.300
+Epoch 63/100 loss=0.1549 act_acc=0.925 phase_acc=0.300
+Epoch 64/100 loss=0.1482 act_acc=0.915 phase_acc=0.300
+Epoch 65/100 loss=0.1490 act_acc=0.924 phase_acc=0.300 solve=44.0% steps=23.2 best=44.0%
+Epoch 66/100 loss=0.1483 act_acc=0.925 phase_acc=0.300
+Epoch 67/100 loss=0.1436 act_acc=0.924 phase_acc=0.300
+Epoch 68/100 loss=0.1426 act_acc=0.931 phase_acc=0.300
+Epoch 69/100 loss=0.1396 act_acc=0.925 phase_acc=0.300
+Epoch 70/100 loss=0.1377 act_acc=0.929 phase_acc=0.300 solve=44.0% steps=23.0 best=44.0%
+Epoch 71/100 loss=0.1359 act_acc=0.929 phase_acc=0.300
+Epoch 72/100 loss=0.1363 act_acc=0.929 phase_acc=0.300
+Epoch 73/100 loss=0.1353 act_acc=0.928 phase_acc=0.300
+Epoch 74/100 loss=0.1330 act_acc=0.925 phase_acc=0.300
+Epoch 75/100 loss=0.1321 act_acc=0.931 phase_acc=0.300 solve=48.0% steps=24.1 best=48.0%
+Epoch 76/100 loss=0.1302 act_acc=0.929 phase_acc=0.300
+Epoch 77/100 loss=0.1290 act_acc=0.929 phase_acc=0.300
+Epoch 78/100 loss=0.1290 act_acc=0.930 phase_acc=0.300
+Epoch 79/100 loss=0.1268 act_acc=0.928 phase_acc=0.300
+Epoch 80/100 loss=0.1259 act_acc=0.931 phase_acc=0.300 solve=42.0% steps=22.6 best=48.0%
+Epoch 81/100 loss=0.1237 act_acc=0.931 phase_acc=0.300
+Epoch 82/100 loss=0.1247 act_acc=0.933 phase_acc=0.300
+Epoch 83/100 loss=0.1231 act_acc=0.931 phase_acc=0.300
+Epoch 84/100 loss=0.1240 act_acc=0.932 phase_acc=0.300
+Epoch 85/100 loss=0.1217 act_acc=0.931 phase_acc=0.300 solve=48.0% steps=23.0 best=48.0%
+Epoch 86/100 loss=0.1222 act_acc=0.932 phase_acc=0.300
+Epoch 87/100 loss=0.1206 act_acc=0.930 phase_acc=0.300
+Epoch 88/100 loss=0.1198 act_acc=0.932 phase_acc=0.300
+Epoch 89/100 loss=0.1200 act_acc=0.932 phase_acc=0.300
+Epoch 90/100 loss=0.1185 act_acc=0.934 phase_acc=0.300 solve=46.0% steps=22.5 best=48.0%
+Epoch 91/100 loss=0.1191 act_acc=0.933 phase_acc=0.300
+Epoch 92/100 loss=0.1181 act_acc=0.931 phase_acc=0.300
+Epoch 93/100 loss=0.1181 act_acc=0.932 phase_acc=0.300
+Epoch 94/100 loss=0.1174 act_acc=0.933 phase_acc=0.300
+Epoch 95/100 loss=0.1174 act_acc=0.933 phase_acc=0.300 solve=46.0% steps=22.3 best=48.0%
+Epoch 96/100 loss=0.1173 act_acc=0.934 phase_acc=0.300
+Epoch 97/100 loss=0.1172 act_acc=0.932 phase_acc=0.300
+Epoch 98/100 loss=0.1171 act_acc=0.933 phase_acc=0.300
+Epoch 99/100 loss=0.1171 act_acc=0.933 phase_acc=0.300
+Epoch 100/100 loss=0.1168 act_acc=0.933 phase_acc=0.300 solve=44.0% steps=22.5 best=48.0%
+Done. Best solve rate: 48.0%
+Checkpoint: checkpoints/best_flat.pt
+TensorBoard: tensorboard --logdir=runs
+
+
+____________________
+
+# Train SANS phase supervision (test d'emergence)
+!python experiments/train.py --model fluid --epochs 100 --grid-size 16
+
+2026-03-19 15:36:50.952326: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1773934610.990605    9024 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1773934611.002259    9024 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1773934611.031734    9024 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1773934611.031779    9024 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1773934611.031786    9024 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1773934611.031793    9024 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-03-19 15:36:51.039278: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Device: cuda
+Generating 1000 training mazes (grid=16)...
+  Train: 1000 trajectories, 23983 steps
+  Val:   100 trajectories, 2353 steps
+Model: fluid | Params: 150,768 | d_model: 64
+  PDE steps/level: 6
+  Mode: NO phase supervision (emergence test)
+
+Training for 100 epochs, batch_size=128
+============================================================
+  Epoch   1/100  loss=1.1432  act_acc=0.513  phase_acc=0.349  solve=0.0%  steps=0.0  best=0.0%
+  Epoch   2/100  loss=1.0254  act_acc=0.552  phase_acc=0.349
+  Epoch   3/100  loss=0.9830  act_acc=0.549  phase_acc=0.349
+  Epoch   4/100  loss=0.9518  act_acc=0.568  phase_acc=0.350
+  Epoch   5/100  loss=0.9317  act_acc=0.566  phase_acc=0.351  solve=0.0%  steps=0.0  best=0.0%
+  Epoch   6/100  loss=0.9069  act_acc=0.592  phase_acc=0.355
+  Epoch   7/100  loss=0.8919  act_acc=0.581  phase_acc=0.354
+  Epoch   8/100  loss=0.8753  act_acc=0.595  phase_acc=0.354
+  Epoch   9/100  loss=0.8780  act_acc=0.581  phase_acc=0.365
+  Epoch  10/100  loss=0.8667  act_acc=0.599  phase_acc=0.365  solve=0.0%  steps=0.0  best=0.0%
+  Epoch  11/100  loss=0.8343  act_acc=0.642  phase_acc=0.377
+  Epoch  12/100  loss=0.8288  act_acc=0.584  phase_acc=0.365
+  Epoch  13/100  loss=0.7943  act_acc=0.654  phase_acc=0.381
+  Epoch  14/100  loss=0.7749  act_acc=0.621  phase_acc=0.382
+  Epoch  15/100  loss=0.7557  act_acc=0.622  phase_acc=0.384  solve=0.0%  steps=0.0  best=0.0%
+  Epoch  16/100  loss=0.7215  act_acc=0.685  phase_acc=0.384
+  Epoch  17/100  loss=0.6584  act_acc=0.742  phase_acc=0.383
+  Epoch  18/100  loss=0.6185  act_acc=0.720  phase_acc=0.384
+  Epoch  19/100  loss=0.5345  act_acc=0.818  phase_acc=0.383
+  Epoch  20/100  loss=0.4646  act_acc=0.790  phase_acc=0.385  solve=10.0%  steps=24.2  best=10.0%
+  Epoch  21/100  loss=0.4219  act_acc=0.851  phase_acc=0.386
+  Epoch  22/100  loss=0.3602  act_acc=0.872  phase_acc=0.385
+  Epoch  23/100  loss=0.3152  act_acc=0.901  phase_acc=0.390
+  Epoch  24/100  loss=0.2860  act_acc=0.887  phase_acc=0.386
+  Epoch  25/100  loss=0.2665  act_acc=0.896  phase_acc=0.395  solve=28.0%  steps=25.1  best=28.0%
+  Epoch  26/100  loss=0.2312  act_acc=0.924  phase_acc=0.396
+  Epoch  27/100  loss=0.2293  act_acc=0.906  phase_acc=0.397
+  Epoch  28/100  loss=0.1983  act_acc=0.921  phase_acc=0.397
+  Epoch  29/100  loss=0.1916  act_acc=0.932  phase_acc=0.384
+  Epoch  30/100  loss=0.1744  act_acc=0.929  phase_acc=0.394  solve=44.0%  steps=25.5  best=44.0%
+  Epoch  31/100  loss=0.1629  act_acc=0.934  phase_acc=0.439
+  Epoch  32/100  loss=0.1499  act_acc=0.917  phase_acc=0.405
+  Epoch  33/100  loss=0.1514  act_acc=0.922  phase_acc=0.405
+  Epoch  34/100  loss=0.1313  act_acc=0.943  phase_acc=0.400
+  Epoch  35/100  loss=0.1303  act_acc=0.943  phase_acc=0.383  solve=44.0%  steps=23.5  best=44.0%
+  Epoch  36/100  loss=0.1268  act_acc=0.947  phase_acc=0.380
+  Epoch  37/100  loss=0.1259  act_acc=0.938  phase_acc=0.383
+  Epoch  38/100  loss=0.1070  act_acc=0.946  phase_acc=0.411
+  Epoch  39/100  loss=0.1035  act_acc=0.929  phase_acc=0.382
+  Epoch  40/100  loss=0.0998  act_acc=0.955  phase_acc=0.394  solve=58.0%  steps=23.7  best=58.0%
+  Epoch  41/100  loss=0.0925  act_acc=0.942  phase_acc=0.425
+  Epoch  42/100  loss=0.0930  act_acc=0.938  phase_acc=0.379
+  Epoch  43/100  loss=0.0909  act_acc=0.963  phase_acc=0.417
+  Epoch  44/100  loss=0.0838  act_acc=0.949  phase_acc=0.378
+  Epoch  45/100  loss=0.0846  act_acc=0.954  phase_acc=0.368  solve=66.0%  steps=25.3  best=66.0%
+  Epoch  46/100  loss=0.0746  act_acc=0.953  phase_acc=0.384
+  Epoch  47/100  loss=0.0761  act_acc=0.949  phase_acc=0.393
+  Epoch  48/100  loss=0.0733  act_acc=0.959  phase_acc=0.375
+  Epoch  49/100  loss=0.0683  act_acc=0.962  phase_acc=0.422
+  Epoch  50/100  loss=0.0656  act_acc=0.955  phase_acc=0.402  solve=64.0%  steps=25.1  best=66.0%
+  Epoch  51/100  loss=0.0616  act_acc=0.966  phase_acc=0.419
+  Epoch  52/100  loss=0.0604  act_acc=0.961  phase_acc=0.400
+  Epoch  53/100  loss=0.0542  act_acc=0.957  phase_acc=0.426
+  Epoch  54/100  loss=0.0490  act_acc=0.966  phase_acc=0.394
+  Epoch  55/100  loss=0.0503  act_acc=0.960  phase_acc=0.392  solve=60.0%  steps=23.8  best=66.0%
+  Epoch  56/100  loss=0.0525  act_acc=0.967  phase_acc=0.391
+  Epoch  57/100  loss=0.0414  act_acc=0.960  phase_acc=0.414
+  Epoch  58/100  loss=0.0460  act_acc=0.969  phase_acc=0.399
+  Epoch  59/100  loss=0.0417  act_acc=0.963  phase_acc=0.379
+  Epoch  60/100  loss=0.0430  act_acc=0.956  phase_acc=0.409  solve=60.0%  steps=24.2  best=66.0%
+  Epoch  61/100  loss=0.0382  act_acc=0.966  phase_acc=0.457
+  Epoch  62/100  loss=0.0322  act_acc=0.939  phase_acc=0.373
+  Epoch  63/100  loss=0.0334  act_acc=0.960  phase_acc=0.399
+  Epoch  64/100  loss=0.0311  act_acc=0.960  phase_acc=0.408
+  Epoch  65/100  loss=0.0294  act_acc=0.966  phase_acc=0.408  solve=66.0%  steps=24.7  best=66.0%
+  Epoch  66/100  loss=0.0287  act_acc=0.961  phase_acc=0.432
+  Epoch  67/100  loss=0.0248  act_acc=0.966  phase_acc=0.414
+  Epoch  68/100  loss=0.0233  act_acc=0.966  phase_acc=0.394
+  Epoch  69/100  loss=0.0218  act_acc=0.971  phase_acc=0.400
+  Epoch  70/100  loss=0.0217  act_acc=0.971  phase_acc=0.397  solve=66.0%  steps=25.1  best=66.0%
+  Epoch  71/100  loss=0.0193  act_acc=0.968  phase_acc=0.396
+  Epoch  72/100  loss=0.0203  act_acc=0.964  phase_acc=0.414
+  Epoch  73/100  loss=0.0176  act_acc=0.969  phase_acc=0.410
+  Epoch  74/100  loss=0.0175  act_acc=0.971  phase_acc=0.397
+  Epoch  75/100  loss=0.0162  act_acc=0.969  phase_acc=0.401  solve=58.0%  steps=24.3  best=66.0%
+  Epoch  76/100  loss=0.0139  act_acc=0.967  phase_acc=0.391
+  Epoch  77/100  loss=0.0127  act_acc=0.970  phase_acc=0.413
+  Epoch  78/100  loss=0.0143  act_acc=0.963  phase_acc=0.397
+  Epoch  79/100  loss=0.0113  act_acc=0.970  phase_acc=0.412
+  Epoch  80/100  loss=0.0112  act_acc=0.969  phase_acc=0.417  solve=60.0%  steps=24.7  best=66.0%
+  Epoch  81/100  loss=0.0110  act_acc=0.972  phase_acc=0.405
+  Epoch  82/100  loss=0.0097  act_acc=0.967  phase_acc=0.402
+  Epoch  83/100  loss=0.0096  act_acc=0.972  phase_acc=0.410
+  Epoch  84/100  loss=0.0089  act_acc=0.972  phase_acc=0.410
+  Epoch  85/100  loss=0.0081  act_acc=0.967  phase_acc=0.405  solve=62.0%  steps=24.7  best=66.0%
+  Epoch  86/100  loss=0.0079  act_acc=0.969  phase_acc=0.408
+  Epoch  87/100  loss=0.0076  act_acc=0.972  phase_acc=0.411
+  Epoch  88/100  loss=0.0074  act_acc=0.969  phase_acc=0.407
+  Epoch  89/100  loss=0.0071  act_acc=0.972  phase_acc=0.406
+  Epoch  90/100  loss=0.0065  act_acc=0.969  phase_acc=0.408  solve=60.0%  steps=25.0  best=66.0%
+  Epoch  91/100  loss=0.0066  act_acc=0.970  phase_acc=0.413
+  Epoch  92/100  loss=0.0061  act_acc=0.971  phase_acc=0.413
+  Epoch  93/100  loss=0.0060  act_acc=0.970  phase_acc=0.411
+  Epoch  94/100  loss=0.0060  act_acc=0.970  phase_acc=0.413
+  Epoch  95/100  loss=0.0058  act_acc=0.969  phase_acc=0.415  solve=62.0%  steps=24.8  best=66.0%
+  Epoch  96/100  loss=0.0057  act_acc=0.970  phase_acc=0.415
+  Epoch  97/100  loss=0.0056  act_acc=0.969  phase_acc=0.412
+(coupure google colab)
+
+
+_____________________
+TRAIN CRAFT
+(lerobot312) C:\DEV\Workspace\active\coding\_AI RESEARCH\Fluidplanner>python experiments/train_craft.py --model flat --epochs 200 --grid-size 20
+Device: cuda
+Generating training data (grid=20)...
+  Dataset: 500 episodes (depth1=167, depth2=167, depth3=166)
+  Dataset: 50 episodes (depth1=17, depth2=17, depth3=16)
+  Train: 22628 steps | Val: 2324 steps
+Model: flat | Params: 122,310
+  NO phase supervision (emergence test)
+
+Training for 200 epochs
+======================================================================
+  Epoch   1/200  loss=1.6004  acc=0.238  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch   2/200  loss=1.5649  acc=0.290
+  Epoch   3/200  loss=1.5253  acc=0.309
+  Epoch   4/200  loss=1.5030  acc=0.339
+  Epoch   5/200  loss=1.4892  acc=0.293
+  Epoch   6/200  loss=1.4779  acc=0.309
+  Epoch   7/200  loss=1.4687  acc=0.308
+  Epoch   8/200  loss=1.4592  acc=0.310
+  Epoch   9/200  loss=1.4487  acc=0.305
+  Epoch  10/200  loss=1.4371  acc=0.307  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch  11/200  loss=1.4254  acc=0.296
+  Epoch  12/200  loss=1.4119  acc=0.299
+  Epoch  13/200  loss=1.3974  acc=0.311
+  Epoch  14/200  loss=1.3801  acc=0.325
+  Epoch  15/200  loss=1.3650  acc=0.312
+  Epoch  16/200  loss=1.3470  acc=0.311
+  Epoch  17/200  loss=1.3316  acc=0.311
+  Epoch  18/200  loss=1.3153  acc=0.309
+  Epoch  19/200  loss=1.2994  acc=0.332
+  Epoch  20/200  loss=1.2834  acc=0.315  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch  21/200  loss=1.2697  acc=0.315
+  Epoch  22/200  loss=1.2560  acc=0.303
+  Epoch  23/200  loss=1.2433  acc=0.311
+  Epoch  24/200  loss=1.2314  acc=0.302
+  Epoch  25/200  loss=1.2189  acc=0.294
+  Epoch  26/200  loss=1.2084  acc=0.317
+  Epoch  27/200  loss=1.2012  acc=0.318
+  Epoch  28/200  loss=1.1892  acc=0.305
+  Epoch  29/200  loss=1.1805  acc=0.288
+  Epoch  30/200  loss=1.1721  acc=0.290  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch  31/200  loss=1.1663  acc=0.306
+  Epoch  32/200  loss=1.1592  acc=0.297
+  Epoch  32/200  loss=1.1592  acc=0.297
+  Epoch  33/200  loss=1.1544  acc=0.294
+  Epoch  34/200  loss=1.1471  acc=0.291
+  Epoch  35/200  loss=1.1411  acc=0.302
+  Epoch  36/200  loss=1.1345  acc=0.302
+  Epoch  37/200  loss=1.1301  acc=0.306
+  Epoch  38/200  loss=1.1252  acc=0.299
+  Epoch  39/200  loss=1.1170  acc=0.296
+  Epoch  40/200  loss=1.1137  acc=0.304  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch  41/200  loss=1.1098  acc=0.299
+  Epoch  42/200  loss=1.1054  acc=0.290
+  Epoch  43/200  loss=1.1019  acc=0.297
+  Epoch  44/200  loss=1.0953  acc=0.292
+  Epoch  45/200  loss=1.0932  acc=0.300
+  Epoch  46/200  loss=1.0879  acc=0.293
+  Epoch  47/200  loss=1.0834  acc=0.288
+  Epoch  48/200  loss=1.0809  acc=0.302
+  Epoch  49/200  loss=1.0764  acc=0.278
+  Epoch  50/200  loss=1.0736  acc=0.295  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch  51/200  loss=1.0688  acc=0.293
+  Epoch  52/200  loss=1.0697  acc=0.293
+  Epoch  53/200  loss=1.0624  acc=0.293
+  Epoch  54/200  loss=1.0607  acc=0.303
+  Epoch  55/200  loss=1.0577  acc=0.295
+  Epoch  56/200  loss=1.0548  acc=0.288
+  Epoch  57/200  loss=1.0531  acc=0.290
+  Epoch  58/200  loss=1.0497  acc=0.312
+  Epoch  59/200  loss=1.0470  acc=0.301
+  Epoch  60/200  loss=1.0441  acc=0.289  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch  61/200  loss=1.0422  acc=0.291
+  Epoch  62/200  loss=1.0383  acc=0.286
+  Epoch  63/200  loss=1.0350  acc=0.297
+  Epoch  64/200  loss=1.0345  acc=0.293
+  Epoch  65/200  loss=1.0309  acc=0.298
+  Epoch  66/200  loss=1.0301  acc=0.290
+  Epoch  67/200  loss=1.0262  acc=0.296
+  Epoch  68/200  loss=1.0236  acc=0.292
+  Epoch  69/200  loss=1.0229  acc=0.286
+  Epoch  70/200  loss=1.0189  acc=0.299  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch  71/200  loss=1.0182  acc=0.307
+  Epoch  72/200  loss=1.0157  acc=0.291
+  Epoch  73/200  loss=1.0129  acc=0.302
+  Epoch  74/200  loss=1.0131  acc=0.287
+  Epoch  75/200  loss=1.0085  acc=0.288
+  Epoch  76/200  loss=1.0069  acc=0.281
+  Epoch  77/200  loss=1.0046  acc=0.288
+  Epoch  78/200  loss=1.0031  acc=0.277
+  Epoch  79/200  loss=1.0016  acc=0.291
+  Epoch  80/200  loss=0.9997  acc=0.281  depth1=0%  depth2=0%  depth3=0%  total=0%  best=0%
+  Epoch  81/200  loss=0.9970  acc=0.275
+(0% jusqu'à 200%)
+_____________________
+python experiments/train_craft.py --model fluid --epochs 200 --grid-size 20
+
+
+
+
+
+_____________________
+PURE
+
+python experiments/train_pure.py --epochs 100 --d-model 128 --pde-steps 12
+
