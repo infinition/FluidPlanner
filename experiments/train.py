@@ -118,9 +118,18 @@ def train(args):
     n_params = sum(p.numel() for p in model.parameters())
     print(f"Model: {args.model} | Params: {n_params:,} | d_model: {args.d_model}")
     print(f"  PDE steps/level: {args.pde_steps}")
+    print(f"  Mode: NO phase supervision (emergence test)")
 
-    # Optimizer
-    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=1e-4)
+    # Freeze phase_head -- no gradient, used as probe only
+    if hasattr(model, "phase_head"):
+        for p in model.phase_head.parameters():
+            p.requires_grad = False
+
+    # Optimizer (phase_head excluded since frozen)
+    optimizer = torch.optim.AdamW(
+        [p for p in model.parameters() if p.requires_grad],
+        lr=args.lr, weight_decay=1e-4,
+    )
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs)
 
     # TensorBoard
@@ -155,15 +164,14 @@ def train(args):
 
             out = model(batch_s)
 
-            # Action loss (primary)
+            # Action loss ONLY -- no phase supervision
+            # The model must discover the hierarchical decomposition on its own
             action_loss = F.cross_entropy(out["action_logits"], batch_a)
 
-            # Phase loss (auxiliary)
+            # Phase head exists but receives NO gradient -- used only for probing
             phase_loss = torch.tensor(0.0, device=device)
-            if out["phase_logits"].shape[-1] == 3:
-                phase_loss = F.cross_entropy(out["phase_logits"], batch_p)
 
-            loss = action_loss + 0.3 * phase_loss
+            loss = action_loss
 
             optimizer.zero_grad()
             loss.backward()

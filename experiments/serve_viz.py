@@ -36,6 +36,7 @@ def generate_episode_data(model, env, maze_id, device):
     model.eval()
 
     max_steps = max(len(optimal_actions) * 3, 30)
+    prev_fields = {}  # track field changes between steps
 
     for step in range(max_steps):
         state = env.to_tensor(device).unsqueeze(0)
@@ -49,6 +50,7 @@ def generate_episode_data(model, env, maze_id, device):
 
         # Extract PCA-reduced field visualizations (3 channels -> RGB)
         fields_rgb = {}
+        field_stability = {}  # how much each level changed from last step
         for name, field in out.get("fields", {}).items():
             f = field.squeeze(0)  # (C, H, W)
             # Take first 3 channels as RGB proxy
@@ -62,6 +64,15 @@ def generate_episode_data(model, env, maze_id, device):
                     rgb[c] = 0.5
             fields_rgb[name] = rgb.tolist()
 
+            # Measure field change from previous step (stability metric)
+            f_flat = f.cpu()
+            if name in prev_fields:
+                change = (f_flat - prev_fields[name]).abs().mean().item()
+                field_stability[name] = round(change, 6)
+            else:
+                field_stability[name] = 0.0
+            prev_fields[name] = f_flat
+
         frame = {
             "step": step,
             "grid": env.grid.tolist(),
@@ -73,6 +84,7 @@ def generate_episode_data(model, env, maze_id, device):
             "action_probs": action_probs,
             "phase_probs": phase_probs,
             "fields": fields_rgb,
+            "field_stability": field_stability,
             "goal_reached": env.goal_reached,
         }
         frames.append(frame)
@@ -194,6 +206,13 @@ canvas { display: block; margin: 0 auto; image-rendering: pixelated; border: 1px
         <div class="field-label">Level 0 (Fast - Actions)</div>
         <canvas id="field0" width="256" height="256"></canvas>
       </div>
+    </div>
+    <div style="margin-top:12px;">
+      <h3>Field Stability (Emergence Indicator)</h3>
+      <div style="font-size:11px;color:#8892a0;margin-bottom:4px;">
+        Low = stable (plan), High = changing (actions). If hierarchy emerges: Level 2 &lt; Level 1 &lt; Level 0.
+      </div>
+      <canvas id="stabilityCanvas" width="512" height="120"></canvas>
     </div>
     <div style="margin-top:12px;">
       <h3>Trajectory Comparison</h3>
@@ -338,6 +357,9 @@ function render() {
     drawField('field0', frame.fields.u0);
   }
 
+  // Stability chart
+  drawStability();
+
   // Trajectory comparison
   drawTrajectory();
 }
@@ -414,6 +436,75 @@ function drawField(canvasId, fieldData) {
       ctx.fillRect(c * cellW, r * cellH, cellW, cellH);
     }
   }
+}
+
+function drawStability() {
+  const canvas = document.getElementById('stabilityCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (!currentMaze) return;
+
+  const frames = currentMaze.frames;
+  const levels = ['u2', 'u1', 'u0'];
+  const colors = ['#4ade80', '#a855f7', '#ef4444'];
+  const labels = ['Level 2 (Slow)', 'Level 1 (Medium)', 'Level 0 (Fast)'];
+
+  // Collect all stability values to find max
+  let maxVal = 0.001;
+  frames.forEach(f => {
+    if (f.field_stability) {
+      levels.forEach(l => {
+        if (f.field_stability[l] > maxVal) maxVal = f.field_stability[l];
+      });
+    }
+  });
+
+  const padL = 60, padR = 10, padT = 10, padB = 20;
+  const plotW = canvas.width - padL - padR;
+  const plotH = canvas.height - padT - padB;
+
+  // Draw lines for each level
+  levels.forEach((level, li) => {
+    ctx.strokeStyle = colors[li];
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    let started = false;
+    frames.forEach((f, fi) => {
+      if (!f.field_stability || !f.field_stability[level]) return;
+      const x = padL + (fi / Math.max(frames.length - 1, 1)) * plotW;
+      const y = padT + plotH - (f.field_stability[level] / maxVal) * plotH;
+      if (!started) { ctx.moveTo(x, y); started = true; }
+      else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+  });
+
+  // Current step marker
+  const cx = padL + (currentStep / Math.max(frames.length - 1, 1)) * plotW;
+  ctx.strokeStyle = '#ffffff';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(cx, padT);
+  ctx.lineTo(cx, padT + plotH);
+  ctx.stroke();
+
+  // Legend
+  ctx.font = '10px monospace';
+  labels.forEach((label, i) => {
+    ctx.fillStyle = colors[i];
+    ctx.fillRect(padL + i * 150, padT + plotH + 6, 10, 10);
+    ctx.fillStyle = '#8892a0';
+    ctx.fillText(label, padL + i * 150 + 14, padT + plotH + 15);
+  });
+
+  // Y axis label
+  ctx.fillStyle = '#8892a0';
+  ctx.font = '9px monospace';
+  ctx.save();
+  ctx.translate(10, padT + plotH / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText('Field change', 0, 0);
+  ctx.restore();
 }
 
 function drawTrajectory() {
