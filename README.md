@@ -1,3 +1,6 @@
+<img width="254" height="254" alt="image-removebg-preview (9)" src="https://github.com/user-attachments/assets/9ed825c5-882f-4a4f-8ff5-692d3dfb59fb" />
+
+
 # FluidPlanner
 
 Hierarchical planning via multi-scale reaction-diffusion PDEs.
